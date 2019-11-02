@@ -30,26 +30,33 @@ async function fetchGithub(){
     // filter out unwanted titles
     const jrJobs = allJobs.filter(job => {
         const jobTitle = job.title.toLowerCase();
-        const jobType = job.type.toLowerCase();
+        const jobDescription = job.description.toLowerCase();
 
-        // filter logic, senior level
+        // filter logic
         if (
-            jobTitle.includes('senior') || 
+            (jobTitle.includes('senior') || 
             jobTitle.includes('sr.') ||
             jobTitle.includes('manager') ||
             jobTitle.includes('architect') ||
             jobTitle.includes('devops') ||
             jobTitle.includes('php') ||
             jobTitle.includes('master') ||
-            jobTitle.includes('principal') ||
             jobTitle.includes('lead') ||
-            jobType.includes('contract')
-            
+            jobTitle.includes('principal')) 
             
         ){
             return false
         }
-        return true;
+        if (
+            jobDescription.includes('python') ||
+            jobDescription.includes('c++') ||
+            jobDescription.includes('linux') ||
+            jobDescription.includes('embedded')
+        )
+        {
+            return true;
+        }
+        return false;
     })
 
     console.log('got', totalJobs, 'total jobs');

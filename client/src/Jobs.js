@@ -23,7 +23,6 @@ export default function Jobs({jobs}) {
     const classes = useStyles();
     const theme = useTheme();
     
-
     const numJobs = jobs.length;
     const numPages = Math.ceil(numJobs/50);
 
@@ -56,7 +55,7 @@ export default function Jobs({jobs}) {
         <div className="jobs">
             <JobModal open={open} job={selectedJob} handleClose={handleClose}/>
 
-            <Typography variant="h3" >
+            <Typography variant="h3">
                 My Software Jobs
             </Typography>
             <Typography variant="h6" component="h2">
