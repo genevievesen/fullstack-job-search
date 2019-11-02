@@ -6,9 +6,11 @@ Filter set in code to fetch non-senior c++, python and embedded software jobs.
 
 ## To Run: 
 
-redis-server 		--Start Redis Server
+redis-server 		      --Start Redis Server
 
 node worker/index.js 	--Start worker
 
-node api/index.js	--Start API 
+node api/index.js	    --Start API 
+
+npm start client/     --Start front end
 
